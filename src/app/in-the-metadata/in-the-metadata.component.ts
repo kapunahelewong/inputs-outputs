@@ -1,4 +1,7 @@
-import { Component, EventEmitter } from '@angular/core';
+/* tslint:disable:use-input-property-decorator */
+/* tslint:disable:use-output-property-decorator */
+
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-in-the-metadata',
@@ -9,13 +12,15 @@ import { Component, EventEmitter } from '@angular/core';
 })
 export class InTheMetadataComponent  {
 
-
+  clearanceItem: string;
   buyEvent: EventEmitter<string> = new EventEmitter<string>();
 
-
   buyIt() {
-    console.log('Child says, emiting buyEvent: ', this.clearanceItem);
+    console.log('Child says, emiting buyEvent with: ', this.clearanceItem);
     this.buyEvent.emit(this.clearanceItem);
   }
 
 }
+
+/* tslint:enable:use-input-property-decorator */
+/* tslint:enable:use-output-property-decorator */
